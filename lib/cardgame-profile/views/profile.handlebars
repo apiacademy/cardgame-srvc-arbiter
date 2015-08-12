@@ -1,9 +1,79 @@
-{
-  "version" : "1.0",
-  "data" : [
-    {
-      "rel" : "self",
-      "url" : "/" 
-    }
-  ]  
-}
+<alps>
+  <doc>
+    first cut at go fish domain
+  </doc>
+
+    <!-- data points -->
+    <descriptor id="gameID"></descriptor>
+    <descriptor id="deckID"></descriptor>
+    <descriptor id="opponentsLastMove"></descriptor>
+    <descriptor id="opponentsCardCount"></descriptor>
+    <descriptor id="cardsLeft"></descriptor>
+    <descriptor id="hands"></descriptor>
+    <descriptor id="cards"></descriptor>
+    <descriptor id="books"></descriptor>
+    <descriptor id="winner"></descriptor>
+    <descriptor id="cardsRequested"></descriptor>
+    <descriptor id="cardsLost"></descriptor>
+    <descriptor id="cardsGained"></descriptor>
+    <descriptor id="rank"></descriptor>
+    <descriptor id="suit"></descriptor>
+    <descriptor id="image"></descriptor>
+    <descriptor id="card"></descriptor>
+    <descriptor id="book">
+        <doc>in Fish a &apos;book&apos; is a set of four cards with the same rank.</doc>
+    </descriptor>
+    <descriptor id= "deck"></descriptor>
+    <descriptor id= "hand"></descriptor>
+    <descriptor id= "game"></descriptor>
+    <descriptor id= "name"></descriptor>
+    <descriptor id= "id"></descriptor>
+    <descriptor id= "player"></descriptor>
+    <descriptor id= "activePlayer"></descriptor>
+    <descriptor id= "timeSinceLastMove"></descriptor>
+    <descriptor id= "timeSinceLastHeartbeat"></descriptor>
+    <descriptor id= "avatar"></descriptor>
+    <descriptor id= "description"></descriptor>
+    <descriptor id= "gameState">
+        <doc>Possible values are: waiting, ready, active, ended</doc>
+    </descriptor>
+
+
+    <!-- actions -->
+    <descriptor id="deal" type = "unsafe">
+        <doc>pass out set of free cards for all players (e.g. five free cards)</doc>
+    </descriptor>
+    <descriptor id="ask" type = "safe">
+        <doc>ask a player if they have any sixes</doc>
+    </descriptor>
+    <descriptor id="surrender" type = "unsafe">
+        <doc>give up cards the player has asked for</doc>
+    </descriptor>
+    <descriptor id="emptyDraw" type = "unsafe">
+        <doc>take one or more cards from the remaining cards in the unused deck</doc>
+    </descriptor>
+    <descriptor id="fishDraw" type = "unsafe">
+        <doc>take one card because of &quot;go fish&quot;</doc>
+    </descriptor>
+    <descriptor id="makeBook" type = "unsafe">
+        <doc>place a full book of rank cards</doc>
+    </descriptor>
+    <descriptor id="speak" type = "safe">
+        <doc>say something to one or more players</doc>
+    </descriptor>
+    <descriptor id="readGameState" type = "safe">
+        <doc>get current state of the game</doc>
+    </descriptor>
+    <descriptor id="listGames" type = "unsafe">
+        <doc>list games that have been created</doc>
+    </descriptor>
+    <descriptor id="joinGame" type = "safe">
+        <doc>join an existing game</doc>
+    </descriptor>
+    <descriptor id="startGame" type = "unsafe">
+        <doc>create and join a new game</doc>
+    </descriptor>
+    <descriptor id="concedeGame" type = "unsafe">
+        <doc>give up and quit</doc>
+    </descriptor>
+</alps>

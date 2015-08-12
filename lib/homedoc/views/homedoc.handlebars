@@ -1,9 +1,32 @@
-{
-  "version" : "1.0",
-  "data" : [
+  [
     {
       "rel" : "self",
       "url" : "/" 
+    },
+    {
+      "rel"   : "/profiles#startGame",
+      "url"   : "/start-game",
+      "model" : "t={gameTitle}&n={playerOneName}"
+    },
+    {
+      "label"     : "List Games",
+      "rel"       : "/profiles#listGames",
+      "url"       : "/list-games{?state}",
+      "templated" : true
+    },
+    {
+      "rel"   : "/profiles#joinGame",
+      "url"   : "/join-game",
+      "model" : "g={gameId}&n={playerTwoName}"
+    },
+    {
+      "rel"   : "/profiles#concedeGame",
+      "url"   : "/concede-game",
+      "model" : "g={gameId}&p={playerId}"
+    },
+    {
+      "rel"   : "/profiles#readGameState",
+      "url"   : "/game-state{?game_id,player_id}",
+      "templated" : true
     }
-  ]  
-}
+  ]
