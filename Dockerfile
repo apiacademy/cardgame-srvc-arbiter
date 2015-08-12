@@ -1,14 +1,11 @@
-# Written after: https://github.com/phusion/passenger-docker
-
-FROM phusion/passenger-nodejs:latest
+FROM irakli/nodejs:latest
 
 # Set correct environment variables.
 ENV HOME /opt/application
 
-# Use baseimage-docker's init process.
-CMD ["/sbin/my_init"]
-
-COPY ./ /opt/application
+# Instead, run with -v flag that mounts proper codebase to /opt/application, e.g.:
+# docker run -ti -d -p 5000:3000 -v /opt/spaces/irakli:/opt/application --name irakli_container irakli/nodebootstrap-hello
+# COPY ./ /opt/application
 
 COPY runit /etc/service/node-app
 RUN chmod -R 755 /etc/service/node-app
@@ -30,4 +27,4 @@ ENV NODE_PATH="/opt/application/lib" \
 
 
 # Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
