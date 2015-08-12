@@ -24,6 +24,7 @@ server.setup(function(runningApp) {
   runningApp.use('/profile',    require('cardgame-profile')); // attach to sub-route
   runningApp.use('/game-state', require('gamestate')); // attach to sub-route
   runningApp.use('/start-game', require('startgame')); // attach to sub-route
+  runningApp.use('/join-game',  require('joingame')); // attach to sub-route  
   
   // If you need websockets:
   // var socketio = require('socket.io')(runningApp.http);

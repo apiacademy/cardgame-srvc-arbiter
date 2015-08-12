@@ -1,0 +1,36 @@
+  [
+    {
+      "name" : "gameID",
+      "value" : "{{game_id}}",
+      "label" : "Unique ID of the game we launched"      
+    },
+    {
+      "name" : "gameName",
+      "value" : "{{game_name}}",
+      "label" : "{{player_name}} - {{game_name}}"
+    },
+    {
+      "id"    : "player_one_name",
+      "name"  : "playerName",
+      "value" : "{{player_one_name}}",
+      "label" : "First Player"
+    },
+    {
+      "id"    : "player_two_name",
+      "name"  : "playerName",
+      "value" : "{{player_two_name}}",
+      "label" : "Second Player"
+    },
+    {
+      "label" : "Forfeit",
+      "rel"   : "/profiles#concedeGame",
+      "url"   : "/concede-game",
+      "model" : "{?game_id,player_id}",
+      "action": "remove"
+    },
+    {
+      "rel"   : "/profiles#readGameState",
+      "url"   : "/game-state{?game_id,player_id}",
+      "templated" : true
+    }   
+  ]

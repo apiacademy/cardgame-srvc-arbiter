@@ -15,7 +15,7 @@
         },
         {
           "name"  : "player_one_name",
-          "label" : "Player Nickname"
+          "label" : "Player's Nickname"
         }        
       ]
     },
@@ -30,14 +30,16 @@
       "rel"   : "/profiles#joinGame",
       "url"   : "/join-game",
       "model" : "{game_id,player_two_name}",
-      "action" : "append"
-    },
-    {
-      "label" : "Forfeit",
-      "rel"   : "/profiles#concedeGame",
-      "url"   : "/concede-game",
-      "model" : "{?game_id,player_id}",
-      "action": "remove"
+      "action" : "append",
+      "data"  : [{
+          "name"  : "game_id"
+        },
+        {
+          "name"  : "player_two_name",
+          "label" : "Player's Nickname"
+        }        
+      ]
+
     },
     {
       "rel"   : "/profiles#readGameState",
