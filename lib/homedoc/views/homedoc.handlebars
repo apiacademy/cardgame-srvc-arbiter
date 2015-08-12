@@ -8,7 +8,16 @@
       "rel"   : "/profiles#startGame",
       "url"   : "/start-game",
       "model" : "{game_title,player_one_name}",
-      "action" : "append"
+      "action": "append",
+      "data"  : [{
+          "name"  : "game_title",
+          "label" : "Game Title"
+        },
+        {
+          "name"  : "player_one_name",
+          "label" : "Player Nickname"
+        }        
+      ]
     },
     {
       "label"     : "List Games",
