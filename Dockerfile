@@ -26,5 +26,5 @@ ENV NODE_PATH="/opt/application/lib" \
     NODE_LOG_DIR=/opt/application/logs"
 
 
-# Clean up APT when done.
-# RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# Clean up
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

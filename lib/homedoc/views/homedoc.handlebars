@@ -4,9 +4,11 @@
       "url" : "/" 
     },
     {
+      "label" : "Start a Game",
       "rel"   : "/profiles#startGame",
       "url"   : "/start-game",
-      "model" : "t={gameTitle}&n={playerOneName}"
+      "model" : "{game_title,player_one_name}",
+      "action" : "append"
     },
     {
       "label"     : "List Games",
@@ -15,14 +17,18 @@
       "templated" : true
     },
     {
+      "label" : "Join Game",
       "rel"   : "/profiles#joinGame",
       "url"   : "/join-game",
-      "model" : "g={gameId}&n={playerTwoName}"
+      "model" : "{game_id,player_two_name}",
+      "action" : "append"
     },
     {
+      "label" : "Forfeit",
       "rel"   : "/profiles#concedeGame",
       "url"   : "/concede-game",
-      "model" : "g={gameId}&p={playerId}"
+      "model" : "{?game_id,player_id}",
+      "action": "remove"
     },
     {
       "rel"   : "/profiles#readGameState",
