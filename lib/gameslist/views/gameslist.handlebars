@@ -1,0 +1,58 @@
+  [
+    {
+      "name"  : "gameID",
+      "value" : "8e819026-4134-11e5-a151-feff819cdc9f",
+      "data"  : [
+        {
+          "name" : "state",
+          "value" : "waiting",
+          "label" : "Game State"
+        },
+        {
+          "name" : "gameName",
+          "value" : "Firewalls",
+          "label" : "{{player_name}} - {{game_name}}"
+        },
+        {
+          "id"    : "player_one_name",
+          "name"  : "playerName",
+          "value" : "Jasmine",
+          "label" : "First Player"
+        },
+        {
+          "id"    : "player_two_name",
+          "name"  : "playerName",
+          "value" : "Timothy",
+          "label" : "Second Player"
+        }   
+      ] 
+    },
+    {
+      "label" : "Join Game",
+      "rel"   : "/profiles#joinGame",
+      "url"   : "/join-game",
+      "model" : "{game_id,player_two_name}",
+      "action" : "append",
+      "data"  : [{
+          "name"  : "game_id"
+        },
+        {
+          "name"  : "player_two_name",
+          "label" : "Player's Nickname"
+        }        
+      ]
+
+    },
+    {
+      "label" : "Forfeit",
+      "rel"   : "/profiles#concedeGame",
+      "url"   : "/concede-game",
+      "model" : "{?game_id,player_id}",
+      "action": "remove"
+    },
+    {
+      "rel"   : "/profiles#readGameState",
+      "url"   : "/game-state{?game_id,player_id}",
+      "templated" : true
+    }   
+  ]
