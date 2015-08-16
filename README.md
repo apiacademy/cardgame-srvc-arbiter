@@ -15,4 +15,4 @@ Documentation: https://github.com/apiacademy/cardgame-srvc-arbiter/wiki
     ```
 1. You can view logs with: `docker logs -tf [containername]` where [containername] can be obtained by running `docker ps`
 1. You can edit files directly in the git checkout. Container will hot-reload code on edits.
-1. Please submit an issue to the issue queue if you find any problems
+1. Please submit an issue to the [issue queue](https://github.com/apiacademy/cardgame-srvc-arbiter/issues) if you find any problems
