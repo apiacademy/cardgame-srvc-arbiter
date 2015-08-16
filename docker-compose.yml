@@ -1,0 +1,10 @@
+web:
+  build: .
+  ports:
+   - "5000:3000"
+  volumes:
+   - .:/opt/application
+  links:
+   - redis
+redis:
+  image: redis
