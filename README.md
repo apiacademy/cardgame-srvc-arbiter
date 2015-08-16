@@ -13,6 +13,15 @@ Documentation: https://github.com/apiacademy/cardgame-srvc-arbiter/wiki
     cd cardgame-srvc-arbiter
     docker-compose up -d
     ```
+    
+    or if there is a problem with using Docker Compose (as [it is on boot2docker](https://github.com/docker/compose/issues/1032)), you can instead use:
+    
+    ```console
+    docker build -t cardgame .
+    docker run -ti -d --name cardgame-redis redis
+    docker run -ti -d -p 5000:3000 -v .:/opt/application --link cardgame-redis:cardgame-redis --name cardgame-api cardgame
+    ```
+    
 1. You can view logs with: `docker logs -tf [containername]` where [containername] can be obtained by running `docker ps`
 1. You can edit files directly in the git checkout. Container will hot-reload code on edits.
 1. Please submit an issue to the [issue queue](https://github.com/apiacademy/cardgame-srvc-arbiter/issues) if you find any problems
