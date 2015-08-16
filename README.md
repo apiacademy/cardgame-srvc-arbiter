@@ -5,8 +5,8 @@ Documentation: https://github.com/apiacademy/cardgame-srvc-arbiter/wiki
 
 ## Installation
 
-1. Install Docker and Docker Compose. For Ubuntu, you can use Ansible Scripts we wrote
-1. Install corresponding container in dev mode:
+1. Install Docker and Docker Compose. For Ubuntu, you can use [Ansible Scripts we wrote](https://github.com/apiacademy/quizgame/tree/master/ansible).
+1. Install developer container:
  
     ```console
     git clone https://github.com/apiacademy/cardgame-srvc-arbiter.git
