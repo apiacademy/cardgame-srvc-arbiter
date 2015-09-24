@@ -19,7 +19,7 @@ Documentation: https://github.com/apiacademy/cardgame-srvc-arbiter/wiki
     ```console
     docker build -t cardgame .
     docker run -ti -d --name cardgame-redis redis
-    docker run -ti -d -p 5000:3000 -v .:/opt/application --link cardgame-redis:cardgame-redis --name cardgame-api cardgame
+    docker run -ti -d -p 5000:3000 -v $PWD:/opt/application --link cardgame-redis:cardgame-redis --name cardgame-api cardgame
     ```
     
 1. You can view logs with: `docker logs -tf [containername]` where [containername] can be obtained by running `docker ps`
