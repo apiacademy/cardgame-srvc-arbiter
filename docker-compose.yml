@@ -6,6 +6,8 @@ web:
    - .:/opt/application
   links:
    - redis
+  environment:
+    - REDIS_HOST=http://redis:6379
 redis:
   image: redis
   ports:
