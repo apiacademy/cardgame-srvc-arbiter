@@ -5,7 +5,10 @@ Documentation: https://github.com/apiacademy/cardgame-srvc-arbiter/wiki
 
 ## Installation
 
-1. Install Docker and Docker Compose. For Ubuntu, you can use [Ansible Scripts we wrote](https://github.com/apiacademy/quizgame/tree/master/ansible).
+1. Install Docker and Docker Compose. 
+    2. For Ubuntu, you can use [Ansible Scripts we wrote](https://github.com/apiacademy/quizgame/tree/master/ansible).
+    3. For Mac or Windows you should use Docker Machine via [Docker Toolbox](https://www.docker.com/toolbox)
+    4. If you prefer Paralles over VirtualBox, for powering Docker Machin, you need to follow their instructions at: <http://kb.parallels.com/en/123356>
 1. Make sure your Docker daemon is up and running, e.g. on Ubuntu: `sudo service docker start`
 1. Install developer container:
  
