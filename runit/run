@@ -1,7 +1,9 @@
 #!/bin/bash
 # see: https://github.com/phusion/baseimage-docker#adding-additional-daemons
-cd /opt/application
-npm install
-npm install -g supervisor
+
+# cd /opt/application
+# npm install
+# npm install -g supervisor
+
 ./bin/dev_start.sh
 #node server.js

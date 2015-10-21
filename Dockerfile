@@ -4,15 +4,15 @@ FROM irakli/nodejs:latest
 # ENV HOME /opt/application
 VOLUME /opt/application
 
-# ONBUILD ADD ./ /opt/application
-# ONBUILD RUN cd /opt/application && npm install
-
-# Instead, run with -v flag that mounts proper codebase to /opt/application, e.g.:
-# docker run -ti -d -p 5000:3000 -v /opt/spaces/irakli:/opt/application --name irakli_container irakli/nodebootstrap-hello
-# COPY ./ /opt/application
+ENV REFRESHED_AT 2015-10-21-08_31
 
 COPY runit /etc/service/node-app
 RUN chmod -R 755 /etc/service/node-app
+RUN npm install -g supervisor
+
+ONBUILD ADD ./ /opt/application
+ONBUILD WORKDIR /opt/application
+ONBUILD RUN npm install
 
 EXPOSE 3000
 
